@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Advanced cardiovascular anatomy study guide for CRNA and CA students — TEE correlations, vascular access, coronary territories, and autonomic pharmacology.">
+<meta name="author" content="Med Center Health / Total Anesthesia Solutions">
+<meta name="robots" content="noindex, nofollow">
+<title>Cardiovascular Anatomy — Advanced Anesthesia Study Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1B2A;
+    --navy2: #1B2D42;
+    --blue: #1B4F72;
+    --clinical: #2E86C1;
+    --teal: #148F77;
+    --red: #C0392B;
+    --gold: #B7950B;
+    --text: #1a1a1a;
+    --text2: #555;
+    --text3: #888;
+    --bg: #ffffff;
+    --bg2: #f6f7f9;
+    --bg3: #eef0f4;
+    --border: rgba(0,0,0,0.1);
+    --border2: rgba(0,0,0,0.18);
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e8eaed;
+      --text2: #aaa;
+      --text3: #777;
+      --bg: #161b22;
+      --bg2: #1e2530;
+      --bg3: #252d38;
+      --border: rgba(255,255,255,0.1);
+      --border2: rgba(255,255,255,0.18);
+      --shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .pearl { background: #0d1e2e !important; border-color: #1B4F72 !important; }
+    .pearl-title { color: #85C1E9 !important; }
+    .pearl-body { color: #AED6F1 !important; }
+    .warn { background: #220e0e !important; border-color: #7B241C !important; }
+    .warn-title, .warn-body { color: #F1948A !important; }
+    .key-point { background: #1a1200 !important; border-color: #B7950B !important; color: #F7DC6F !important; }
+    .badge-blue { background: #1A5276 !important; color: #AED6F1 !important; }
+    .badge-red { background: #7B241C !important; color: #F1948A !important; }
+    .badge-green { background: #1D6A3A !important; color: #A9DFBF !important; }
+    .badge-gold { background: #7D6608 !important; color: #F7DC6F !important; }
+    .territory-card.selected { background: #0d1e2e !important; }
+    .header { background: linear-gradient(135deg, #0a1520 0%, #0e2e48 100%) !important; }
+    .data-table th { background: #0e2e48 !important; }
+    .data-table tr:nth-child(even) td { background: #1e2530 !important; }
+    .metric { background: #1e2530 !important; }
+    .metric-val { color: #5DADE2 !important; }
+    .NAVEL-n { background: #1A3A5C !important; color: #85C1E9 !important; }
+    .NAVEL-a { background: #145A32 !important; color: #A9DFBF !important; }
+    .NAVEL-v { background: #1B3A6B !important; color: #AED6F1 !important; }
+    .NAVEL-e { background: #252d38 !important; color: #aaa !important; }
+    .NAVEL-l { background: #4A3500 !important; color: #F7DC6F !important; }
+    .valve-btn.active { background: #0e2e48 !important; border-color: #2E86C1 !important; }
+    .access-tab.active { background: #0e4030 !important; border-color: #148F77 !important; }
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg2);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.5;
+  }
+
+  #app {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #0D1B2A 0%, #1B4F72 100%);
+    padding: 24px 28px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.9); font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .header-title { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -0.3px; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+  .header-pills { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+  .hpill { background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.75); }
+  .header-meta { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; gap: 24px; flex-wrap: wrap; }
+  .header-meta-item { font-size: 11px; color: rgba(255,255,255,0.5); }
+  .header-meta-item span { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+  /* ── TABS ── */
+  .tab-bar {
+    display: flex; gap: 4px; overflow-x: auto;
+    padding: 4px; background: var(--bg3); border-radius: var(--radius);
+    margin-bottom: 18px; border: 0.5px solid var(--border);
+  }
+  .tab-bar::-webkit-scrollbar { height: 0; }
+  .tab {
+    background: transparent; border: none; border-radius: 7px;
+    padding: 8px 14px; font-size: 12px; font-weight: 500;
+    color: var(--text2); cursor: pointer; white-space: nowrap;
+    transition: all 0.15s; font-family: inherit;
+  }
+  .tab:hover { background: var(--bg); color: var(--text); }
+  .tab.active { background: var(--blue); color: #fff; }
+
+  /* ── CONTENT SECTIONS ── */
+  .content { display: none; }
+  .content.active { display: block; }
+
+  .section-title { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .section-sub { font-size: 13px; color: var(--text2); margin-bottom: 18px; line-height: 1.6; }
+
+  /* ── GRID LAYOUTS ── */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  @media (max-width: 640px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--bg); border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .card-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .card-body { font-size: 12px; color: var(--text2); line-height: 1.7; }
+  .card-body ul { padding-left: 16px; }
+  .card-body li { margin-bottom: 4px; }
+  .card-body strong { color: var(--text); }
+
+  /* ── INFO BOXES ── */
+  .pearl {
+    background: #EAF4FB; border: 0.5px solid #A9CCE3;
+    border-left: 3px solid #2E86C1; border-radius: var(--radius);
+    padding: 13px 16px; margin-bottom: 12px;
+  }
+  .pearl-title { font-size: 12px; font-weight: 600; color: #1A5276; margin-bottom: 5px; }
+  .pearl-body { font-size: 12px; color: #1F618D; line-height: 1.7; }
+  .pearl-body strong { color: #1A5276; }
+
+  .warn {
+    background: #FDEDEC; border: 0.5px solid #F1948A;
+    border-left: 3px solid #C0392B; border-radius: var(--radius);
+    padding: 13px 16px; margin-bottom: 12px;
+  }
+  .warn-title { font-size: 12px; font-weight: 600; color: #922B21; margin-bottom: 5px; }
+  .warn-body { font-size: 12px; color: #922B21; line-height: 1.7; }
+
+  .key-point {
+    background: #FEF9E7; border: 0.5px solid #F9E79F;
+    border-left: 3px solid #B7950B; border-radius: var(--radius);
+    padding: 11px 16px; margin-bottom: 12px;
+    font-size: 12px; color: #7D6608; line-height: 1.7;
+  }
+
+  /* ── TABLES ── */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 14px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .data-table th { background: #1B4F72; color: #fff; padding: 9px 12px; text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.3px; }
+  .data-table td { padding: 8px 12px; border-bottom: 0.5px solid var(--border); color: var(--text); vertical-align: top; }
+  .data-table td strong { color: var(--text); }
+  .data-table tr:nth-child(even) td { background: var(--bg2); }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: #EAF4FB; }
+  @media (prefers-color-scheme: dark) { .data-table tr:hover td { background: #0d1e2e; } }
+
+  /* ── BADGES ── */
+  .badge { display: inline-block; border-radius: 20px; padding: 2px 8px; font-size: 10px; font-weight: 600; }
+  .badge-blue { background: #D6EAF8; color: #1A5276; }
+  .badge-red { background: #FADBD8; color: #922B21; }
+  .badge-green { background: #D5F5E3; color: #1D8348; }
+  .badge-gold { background: #FEF9E7; color: #7D6608; }
+
+  /* ── METRICS ── */
+  .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  @media (max-width: 560px) { .metric-row { grid-template-columns: repeat(2, 1fr); } }
+  .metric { background: var(--bg2); border-radius: var(--radius); padding: 12px 14px; text-align: center; border: 0.5px solid var(--border); }
+  .metric-val { font-size: 24px; font-weight: 600; color: #2E86C1; }
+  .metric-label { font-size: 10px; color: var(--text3); margin-top: 2px; line-height: 1.4; }
+
+  /* ── PROGRESS BARS ── */
+  .progress-bar { height: 6px; background: var(--bg3); border-radius: 3px; margin: 3px 0 9px; overflow: hidden; border: 0.5px solid var(--border); }
+  .progress-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+
+  /* ── VALVE SELECTOR ── */
+  .valve-selector { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  @media (max-width: 480px) { .valve-selector { grid-template-columns: repeat(2, 1fr); } }
+  .valve-btn {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 10px; text-align: center;
+    cursor: pointer; transition: all 0.15s; font-size: 12px; color: var(--text2);
+  }
+  .valve-btn:hover { border-color: #2E86C1; background: var(--bg); }
+  .valve-btn.active { background: #1B4F72; border-color: #1B4F72; color: #fff; }
+  .valve-btn .vb-name { font-weight: 600; font-size: 14px; }
+  .valve-btn .vb-loc { font-size: 10px; margin-top: 2px; opacity: 0.7; }
+  .valve-detail { display: none; }
+  .valve-detail.active { display: block; }
+
+  /* ── ACCESS TABS ── */
+  .access-tab-bar { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+  .access-tab {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: 7px; padding: 6px 14px; font-size: 12px;
+    font-weight: 500; color: var(--text2); cursor: pointer;
+    font-family: inherit; transition: all 0.15s;
+  }
+  .access-tab:hover { background: var(--bg); color: var(--text); }
+  .access-tab.active { background: #148F77; border-color: #148F77; color: #fff; }
+
+  /* ── CORONARY CARDS ── */
+  .coronary-legend { display: flex; gap: 16px; font-size: 11px; color: var(--text2); margin-bottom: 12px; flex-wrap: wrap; }
+  .cleg { display: flex; align-items: center; gap: 5px; }
+  .cleg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .territory-card {
+    background: var(--bg); border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 12px 14px;
+    cursor: pointer; transition: all 0.15s;
+    box-shadow: var(--shadow);
+  }
+  .territory-card:hover { border-color: #2E86C1; }
+  .territory-card.selected { border-color: #2E86C1; border-width: 1.5px; background: #EAF4FB; }
+  .territory-artery { font-size: 14px; font-weight: 600; }
+  .territory-ecg { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text2); margin-top: 4px; }
+  .territory-detail { font-size: 11px; color: var(--text2); margin-top: 8px; display: none; line-height: 1.7; }
+  .territory-card.selected .territory-detail { display: block; }
+
+  /* ── DRUG LIST ── */
+  .drug-row {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 9px 0; border-bottom: 0.5px solid var(--border);
+    font-size: 12px;
+  }
+  .drug-row:last-child { border-bottom: none; }
+  .drug-name { font-weight: 600; min-width: 120px; color: var(--text); font-size: 12px; }
+  .drug-mech { color: var(--text2); flex: 1; line-height: 1.5; }
+  .drug-hr { min-width: 70px; text-align: center; }
+  .drug-note { font-size: 10px; color: var(--text3); margin-top: 2px; }
+
+  /* ── NAVEL ── */
+  .navel-grid { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  .navel-box { flex: 1; min-width: 80px; border-radius: var(--radius); padding: 12px; text-align: center; }
+  .navel-box .navel-letter { font-size: 22px; font-weight: 600; }
+  .navel-box .navel-word { font-size: 10px; margin-top: 3px; }
+  .NAVEL-n { background: #D6EAF8; color: #1A5276; }
+  .NAVEL-a { background: #D5F5E3; color: #1D8348; }
+  .NAVEL-v { background: #EBF5FB; color: #1F618D; }
+  .NAVEL-e { background: var(--bg3); color: var(--text3); }
+  .NAVEL-l { background: #FEF9E7; color: #7D6608; }
+
+  /* ── FETAL SHUNT CARDS ── */
+  .fetal-card { background: var(--bg); border: 0.5px solid var(--border); border-top: 3px solid #2E86C1; border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
+  .fetal-title { font-size: 16px; font-weight: 600; color: #2E86C1; margin-bottom: 8px; }
+  .fetal-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text3); margin-top: 8px; }
+  .fetal-val { font-size: 12px; color: var(--text); }
+
+  /* ── PRINT STYLES ── */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .tab-bar, .tab { display: none !important; }
+    .content { display: block !important; page-break-before: always; }
+    .header { background: #0D1B2A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .data-table th { background: #1B4F72 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ── FOOTER ── */
+  .app-footer { margin-top: 24px; padding: 16px 0; border-top: 0.5px solid var(--border); text-align: center; font-size: 11px; color: var(--text3); }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-badge">CRNA / CA Advanced Level</div>
+    <div class="header-title">Cardiovascular Anatomy — Advanced Anesthesia Study Guide</div>
+    <div class="header-sub">Clinical correlations, TEE anatomy, vascular access, coronary territories &amp; autonomic pharmacology</div>
+    <div class="header-pills">
+      <span class="hpill">TEE Correlations</span>
+      <span class="hpill">Arterial Lines</span>
+      <span class="hpill">Central Access</span>
+      <span class="hpill">Coronary Territories</span>
+      <span class="hpill">Valve Anatomy</span>
+      <span class="hpill">Autonomic Pharmacology</span>
+      <span class="hpill">Fetal Circulation</span>
+      <span class="hpill">Conduction System</span>
+    </div>
+    <div class="header-meta">
+      <div class="header-meta-item">Institution: <span>Med Center Health / Total Anesthesia Solutions</span></div>
+      <div class="header-meta-item">Source: <span>Dr. Heck — Cardiovascular System Lecture</span></div>
+      <div class="header-meta-item">Location: <span>Bowling Green, KY</span></div>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar">
+    <button class="tab active" onclick="showTab('overview', this)">CV Physiology</button>
+    <button class="tab" onclick="showTab('arterial', this)">Arterial Access</button>
+    <button class="tab" onclick="showTab('central', this)">Central Lines</button>
+    <button class="tab" onclick="showTab('heart', this)">Heart Anatomy</button>
+    <button class="tab" onclick="showTab('valves', this)">Cardiac Valves</button>
+    <button class="tab" onclick="showTab('coronary', this)">Coronary Arteries</button>
+    <button class="tab" onclick="showTab('conduction', this)">Conduction</button>
+    <button class="tab" onclick="showTab('autonomic', this)">Autonomic</button>
+    <button class="tab" onclick="showTab('fetal', this)">Fetal Circ.</button>
+    <button class="tab" onclick="showTab('neck', this)">Head &amp; Neck</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 1: CV PHYSIOLOGY                   -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-overview" class="content active">
+    <div class="section-title">Cardiovascular Physiology Overview</div>
+    <div class="section-sub">Blood volume distribution and vascular resistance — the hemodynamic foundation of anesthetic management.</div>
+
+    <div class="metric-row">
+      <div class="metric"><div class="metric-val">64%</div><div class="metric-label">Blood in systemic veins</div></div>
+      <div class="metric"><div class="metric-val">47%</div><div class="metric-label">Resistance at arterioles</div></div>
+      <div class="metric"><div class="metric-val">5 L</div><div class="metric-label">Total blood volume (70 kg adult)</div></div>
+      <div class="metric"><div class="metric-val">~25%</div><div class="metric-label">Adults with patent PFO</div></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Volume Distribution — Where Does Blood Live?</div>
+        <div class="card-body" id="vol-bars"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Vascular Resistance — Where Is SVR Generated?</div>
+        <div class="card-body" id="res-bars"></div>
+      </div>
+    </div>
+
+    <div class="pearl">
+      <div class="pearl-title">🔷 Anesthesia Pearl — Venodilation Comes First</div>
+      <div class="pearl-body">Most anesthetic agents (propofol, volatile agents, neuraxial) cause <strong>venodilation before arterial vasodilation</strong>. Since 64% of blood resides in veins, venodilation dramatically reduces preload before SVR changes significantly. Phenylephrine restores venous tone → restores preload. This is why vasopressors work preferentially on the largest volume reservoir in the body.</div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">High-Pressure System (Supply Function)</div>
+        <div class="card-body">
+          <ul>
+            <li>Aorta → major arteries → arterioles (primary resistance)</li>
+            <li>Primary determinants: SVR and cardiac output</li>
+            <li>Monitored via: Arterial line, MAP, pulse pressure</li>
+            <li>Afterload management critical in LV dysfunction</li>
+            <li>Aortic cross-clamp: supraceliac increases SVR 40–80%</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Low-Pressure System (Reservoir Function)</div>
+        <div class="card-body">
+          <ul>
+            <li>Systemic veins + right heart + pulmonary vasculature</li>
+            <li>Most sensitive to: anesthetic-induced venodilation</li>
+            <li>Monitored via: CVP, PAP, PCWP (PA catheter)</li>
+            <li>Trendelenburg restores venous return acutely</li>
+            <li>Vasopressin, phenylephrine work primarily here</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-point"><strong>Key Exam Concept:</strong> During AAA repair, supraceliac cross-clamping causes a massive afterload spike (SVR ↑40–80%) requiring deep anesthesia or vasodilator infusion (NTG/SNP). "Declamping shock" occurs upon clamp release — ischemic metabolite washout from lower extremities + acute preload reduction. Anticipate and treat proactively.</div>
+
+    <table class="data-table">
+      <thead><tr><th>Compartment</th><th>Volume %</th><th>Anesthesia Relevance</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Systemic veins</strong></td><td>64%</td><td>Primary capacitance — venodilation (volatiles, propofol, neuraxial) redistributes this reservoir</td></tr>
+        <tr><td><strong>Pulmonary circulation</strong></td><td>9%</td><td>Pulmonary HTN increases this; relevant in cardiac and thoracic anesthesia</td></tr>
+        <tr><td><strong>Heart in diastole</strong></td><td>7%</td><td>Preload — assessed via CVP, PCWP, TEE (LVEDD)</td></tr>
+        <tr><td><strong>Large arteries</strong></td><td>7%</td><td>Afterload determinants; arterial line reflects pulsatility here</td></tr>
+        <tr><td><strong>Small arteries/arterioles</strong></td><td>8%</td><td>Primary resistance vessels — SVR is predominantly arteriolar</td></tr>
+        <tr><td><strong>Capillaries</strong></td><td>5%</td><td>Drug distribution, fluid shifts, Starling forces operate here</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 2: ARTERIAL ACCESS                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-arterial" class="content">
+    <div class="section-title">Systemic Arterial Anatomy &amp; Access Sites</div>
+    <div class="section-sub">Arterial line selection, Allen's test, pulse point anatomy, and CABG conduit planning.</div>
+
+    <table class="data-table">
+      <thead><tr><th>Artery</th><th>Advantages</th><th>Key Risk</th><th>Allen's Test</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Radial</strong> <span class="badge badge-green">Preferred</span></td><td>Superficial, excellent ulnar collateral via palmar arch, easily compressible</td><td>Vasospasm; CABG conduit conflict</td><td>Required (≥7 sec = poor collateral)</td><td>All a-lines; assess CABG conduit eligibility</td></tr>
+        <tr><td><strong>Femoral</strong></td><td>Large caliber, never spasms, always palpable even in shock</td><td>Infection; non-compressible in morbid obesity</td><td>Not needed</td><td>IABP, ECMO, TAVR, emergent access</td></tr>
+        <tr><td><strong>Brachial</strong> <span class="badge badge-red">Caution</span></td><td>Larger than radial, reliable waveform</td><td>End-artery — NO collateral if occluded</td><td>Not applicable</td><td>Only when radial/femoral unavailable</td></tr>
+        <tr><td><strong>Axillary</strong></td><td>Large caliber, excellent waveform, proximal monitoring</td><td>Brachial plexus proximity; hematoma risk</td><td>Not needed</td><td>Cardiac surgery requiring proximal BP monitoring</td></tr>
+        <tr><td><strong>Dorsalis Pedis</strong></td><td>Good alternative, superficial, well-tolerated</td><td>Absent in ~8% of patients</td><td>Assess posterior tibial collateral</td><td>Lower extremity vascular surgery</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn">
+      <div class="warn-title">⚠ Critical Warning — Radial Artery Before CABG</div>
+      <div class="warn-body">If the radial artery is planned as a CABG conduit (especially in younger patients or bilateral mammary contraindicated), do <strong>NOT</strong> place an arterial line in that arm. Coordinate with the surgical team before induction. Document Allen's test: compress radial → hold 30 sec → release → color return in &lt;7 seconds = adequate ulnar collateral. ≥7 sec or incomplete filling = insufficient collateral — do not use that radial for conduit or A-line.</div>
+    </div>
+
+    <div class="grid2">
+      <div class="pearl">
+        <div class="pearl-title">🔷 Pulse Points — Anesthesia-Specific Relevance</div>
+        <div class="pearl-body">
+          <strong>Carotid:</strong> CEA monitoring; cerebral perfusion assessment during cardiac surgery; CPR confirmation<br>
+          <strong>Brachial:</strong> NIBP cuff site; median nerve block landmark (interscalene/supraclavicular approaches)<br>
+          <strong>Femoral:</strong> IABP insertion; coronary angiography; ECMO arterial cannulation<br>
+          <strong>Popliteal:</strong> Lower extremity vascular surgery; posterior fossa; flexed knee for access<br>
+          <strong>Dorsalis pedis + posterior tibial:</strong> Doppler for peripheral vascular disease assessment
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Aortic Segments — Surgical Anatomy</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Ascending (5 cm):</strong> Aortic cannulation, cross-clamp in CABG, aortic valve surgery</li>
+            <li><strong>Arch:</strong> Arch surgery requires DHCA ± ACP; brachiocephalic, L CCA, L subclavian branches</li>
+            <li><strong>Descending thoracic:</strong> Intercostal arteries → spinal cord perfusion (TEVAR: risk of paraplegia)</li>
+            <li><strong>Abdominal:</strong> Bifurcates L4 → common iliacs; AAA cross-clamp levels determine hemodynamic impact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-point"><strong>Mnemonic — Aortic Branches (from arch):</strong> "Brachiocephalic trunk, Left Common Carotid, Left Subclavian" — <strong>BLS</strong> (Basic Life Support). In 0.5% of patients, the left vertebral artery arises directly from the arch between LCC and L subclavian.</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 3: CENTRAL LINES                   -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-central" class="content">
+    <div class="section-title">Venous Anatomy &amp; Central Venous Access</div>
+    <div class="section-sub">Site-specific anatomy, complication profiles, and ultrasound-guided approach considerations.</div>
+
+    <div class="access-tab-bar">
+      <button class="access-tab active" onclick="showAccessTab('ijv', this)">Right IJV</button>
+      <button class="access-tab" onclick="showAccessTab('subcl', this)">Subclavian</button>
+      <button class="access-tab" onclick="showAccessTab('fem', this)">Femoral</button>
+      <button class="access-tab" onclick="showAccessTab('picc', this)">PICC Veins</button>
+      <button class="access-tab" onclick="showAccessTab('compare', this)">Site Comparison</button>
+    </div>
+
+    <div id="acc-ijv" class="valve-detail active">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">Internal Jugular Vein — Anatomy</div>
+          <div class="card-body">
+            <ul>
+              <li>Runs within carotid sheath: IJV + CCA + Vagus nerve (CN X)</li>
+              <li>At cricoid level (C4): IJV lies <strong>anterolateral</strong> to CCA</li>
+              <li>At clavicular level: IJV may be directly anterior to CCA — highest risk zone for carotid puncture</li>
+              <li><strong>Right side preferred:</strong> Direct path to SVC; avoids thoracic duct; higher success rate</li>
+              <li>Ultrasound: IJV is <strong>compressible</strong>; CCA is <strong>non-compressible</strong> — key distinguishing feature</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">IJV Access Technique Tips</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Trendelenburg 15–20°:</strong> Distends IJV significantly — increases target size</li>
+              <li><strong>Valsalva:</strong> Further distends during spontaneous breathing</li>
+              <li>Enter between sternal and clavicular heads of SCM at 45°</li>
+              <li>Aim toward ipsilateral nipple; needle at 30–45° to skin</li>
+              <li>Confirm venous blood (non-pulsatile, dark) before advancing wire</li>
+              <li>Use real-time ultrasound — standard of care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="warn">
+        <div class="warn-title">⚠ Left-Sided Central Lines</div>
+        <div class="warn-body">The left IJV and left subclavian drain via the left brachiocephalic vein, which makes a 90° turn — higher catheter malposition risk. The <strong>thoracic duct</strong> drains at the left jugulovenous angle → injury causes <strong>chylothorax</strong>. Always prefer the <strong>RIGHT side</strong> for central venous access whenever clinically feasible.</div>
+      </div>
+    </div>
+
+    <div id="acc-subcl" class="valve-detail">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">Subclavian Vein — Anatomy</div>
+          <div class="card-body">
+            <ul>
+              <li>Courses from axillary vein (at lateral border of 1st rib) to brachiocephalic vein</li>
+              <li>Lies <strong>anterior</strong> to the anterior scalene muscle</li>
+              <li>Subclavian <strong>artery</strong> lies <strong>posterior</strong> to the anterior scalene — separated by this muscle</li>
+              <li>The vein is NOT compressible if arterial puncture occurs (behind clavicle)</li>
+              <li><strong>Highest PTX risk</strong> of all CVC sites (2–3%) — needle aimed toward lung apex</li>
+              <li><strong>Lowest infection rate</strong> — preferred for long-term CVC need</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">When to Choose Subclavian</div>
+          <div class="card-body">
+            <ul>
+              <li>Long-term CVC (TPN, chemotherapy, chronic medications)</li>
+              <li>Immunocompromised patients (infection risk reduction)</li>
+              <li>Maximum patient comfort — no neck immobility</li>
+              <li><strong>Avoid in:</strong> coagulopathy, mechanical ventilation (PTX risk), bilateral pulmonary disease</li>
+              <li><strong>Never bilateral</strong> subclavian attempts — non-compressible artery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="warn">
+        <div class="warn-title">⚠ Subclavian Arterial Injury Cannot Be Compressed</div>
+        <div class="warn-body">Unlike the carotid or femoral artery, the subclavian artery lies posterior to the clavicle and 1st rib — manual compression is impossible. Arterial puncture can cause <strong>massive hemothorax</strong>. If PTX occurs on one side and the patient requires PPV, bilateral PTX is immediately life-threatening. Abort and reassess if resistance is met or pulsatile blood is obtained.</div>
+      </div>
+    </div>
+
+    <div id="acc-fem" class="valve-detail">
+      <div class="card" style="margin-bottom:14px">
+        <div class="card-title">NAVEL Mnemonic — Femoral Triangle Contents (lateral → medial)</div>
+        <div class="navel-grid">
+          <div class="navel-box NAVEL-n"><div class="navel-letter">N</div><div class="navel-word">Nerve (femoral)</div></div>
+          <div class="navel-box NAVEL-a"><div class="navel-letter">A</div><div class="navel-word">Artery (femoral)</div></div>
+          <div class="navel-box NAVEL-v"><div class="navel-letter">V</div><div class="navel-word">Vein (femoral)</div></div>
+          <div class="navel-box NAVEL-e"><div class="navel-letter">E</div><div class="navel-word">Empty space</div></div>
+          <div class="navel-box NAVEL-l"><div class="navel-letter">L</div><div class="navel-word">Lymphatics</div></div>
+        </div>
+        <div class="card-body" style="margin-top:8px">The femoral vein lies <strong>medial</strong> to the femoral artery within the femoral triangle, below the inguinal ligament. Aim the needle medial to the arterial pulse. Ultrasound guidance significantly reduces accidental arterial cannulation.</div>
+      </div>
+      <div class="pearl">
+        <div class="pearl-title">🔷 Femoral Vein — When Is It the Right Choice?</div>
+        <div class="pearl-body">
+          <strong>Prefer femoral in:</strong> Coagulopathy (vessel is compressible post-puncture), elevated ICP (cannot use Trendelenburg for subclavian/IJ), pediatric patients, resuscitation/emergent access, when bilateral lung disease precludes subclavian.<br><br>
+          <strong>Highest infection rate</strong> — target line removal or transition to superior site as soon as patient can tolerate repositioning.
+        </div>
+      </div>
+    </div>
+
+    <div id="acc-picc" class="valve-detail">
+      <table class="data-table">
+        <thead><tr><th>Vein</th><th>Location</th><th>Route to SVC</th><th>Success Rate</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Basilic</strong> <span class="badge badge-green">Preferred</span></td><td>Medial antebrachium → medial arm</td><td>Direct → axillary → subclavian → brachiocephalic → SVC</td><td>Highest</td><td>Straight path; few anatomical obstacles</td></tr>
+          <tr><td><strong>Cephalic</strong></td><td>Lateral forearm → deltopectoral groove</td><td>Makes 90° turn at clavipectoral fascia into subclavian</td><td>Lower</td><td>Frequent resistance advancing catheter at angle</td></tr>
+          <tr><td><strong>Median cubital</strong></td><td>Antecubital fossa</td><td>Variable via basilic or cephalic</td><td>Moderate</td><td>IV access standard site; phlebotomy</td></tr>
+          <tr><td><strong>External jugular</strong></td><td>Lateral neck surface</td><td>Angles sharply into subclavian/IJV junction</td><td>Low</td><td>Emergency IV access; J-wire often required to advance</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="acc-compare" class="valve-detail">
+      <table class="data-table">
+        <thead><tr><th>Site</th><th>Infection Risk</th><th>PTX Risk</th><th>Arterial Injury</th><th>Best Use Case</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Right IJV</strong> <span class="badge badge-blue">Default</span></td><td>Moderate</td><td>Low (&lt;1%)</td><td>Compressible CCA</td><td>Most patients — most direct path to SVC</td></tr>
+          <tr><td><strong>Left IJV</strong></td><td>Moderate</td><td>Low</td><td>Compressible LCCA</td><td>Right-sided contraindication; accept thoracic duct risk</td></tr>
+          <tr><td><strong>Right Subclavian</strong></td><td>Lowest</td><td>High (2–3%)</td><td>Non-compressible!</td><td>Long-term use, immunocompromised, patient comfort</td></tr>
+          <tr><td><strong>Femoral</strong></td><td>Highest</td><td>None</td><td>Compressible</td><td>Coagulopathy, ICP elevation, emergent resuscitation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 4: HEART ANATOMY                   -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-heart" class="content">
+    <div class="section-title">Cardiac Anatomy — Chambers, Surfaces &amp; TEE Correlation</div>
+    <div class="section-sub">Heart positioning, chamber relationships, pericardium, and standard intraoperative TEE windows.</div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Heart Orientation — Clinically Critical Points</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Apex:</strong> Left, inferior, anterior → 5th ICS, midclavicular line</li>
+            <li><strong>Base (posterosuperior):</strong> Receives pulmonary veins and great vessels</li>
+            <li><strong>RV:</strong> Predominantly <em>anterior</em> — surgeon's first view; forms sternocostal surface</li>
+            <li><strong>LV:</strong> Lateral and posterior — systemic pump; forms the apex</li>
+            <li><strong>LA:</strong> Posterosuperior, directly anterior to esophagus → best TEE access to LA</li>
+            <li><strong>RA:</strong> Right lateral surface; receives SVC superiorly, IVC inferiorly</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Pericardium</div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Fibrous pericardium:</strong> Tough outer layer; fused to diaphragm; limits acute cardiac dilation</li>
+            <li><strong>Serous pericardium:</strong> Parietal (lines fibrous) + Visceral (epicardium); ~50 mL normal fluid</li>
+            <li><strong>Transverse sinus:</strong> Posterior to Ao/PA, anterior to SVC — surgeons pass snares here for great vessel control</li>
+            <li><strong>Oblique sinus:</strong> Blind recess behind LA between pulmonary veins; relevant in pericardiocentesis approach</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn">
+      <div class="warn-title">⚠ Cardiac Tamponade — Induction is High-Risk</div>
+      <div class="warn-body">Rapid accumulation (hemopericardium post-cardiac surgery): tamponade at <strong>100–200 mL</strong>. Slow accumulation: compensation possible at 1000+ mL. Induction in tamponade → loss of sympathetic tone → loss of compensatory tachycardia + vasoconstriction → <strong>cardiovascular collapse</strong>.<br><br>Use <strong>KETAMINE</strong> for induction. Maintain HR and preload. Have surgeon scrubbed at the table before induction whenever possible. Keep epinephrine drawn up. Do not give large doses of volatile agents.</div>
+    </div>
+
+    <div class="section-title" style="font-size:15px;margin:14px 0 8px">Precordial Auscultation — Anatomical vs. Auscultatory Location</div>
+    <div class="key-point"><strong>Critical Teaching Point:</strong> Auscultation areas do NOT correspond to the anatomical location of the valves. Heart sounds are transmitted <em>downstream</em> with blood flow. This is why aortic stenosis is best heard at the right 2nd ICS (downstream from the valve toward the aorta), not at the valve's true position.</div>
+
+    <table class="data-table">
+      <thead><tr><th>Valve</th><th>Anatomical Location</th><th>Auscultation Area</th><th>Classic Murmur</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Aortic</strong></td><td>Right, 2nd ICS, sternal border</td><td>2nd ICS, right sternal border</td><td>Crescendo-decrescendo SEM (AS); early diastolic decrescendo (AR)</td></tr>
+        <tr><td><strong>Pulmonic</strong></td><td>Left, 2nd ICS</td><td>2nd ICS, left sternal border</td><td>Systolic ejection murmur (PS); diastolic decrescendo (PI)</td></tr>
+        <tr><td><strong>Mitral</strong></td><td>Left, 4th ICS near sternum</td><td>Apex — 5th ICS, MCL</td><td>Holosystolic (MR); mid-diastolic rumble with OS (MS)</td></tr>
+        <tr><td><strong>Tricuspid</strong></td><td>Right, 4th ICS</td><td>Lower left sternal border</td><td>Holosystolic (TR); increased with inspiration (Carvallo's sign)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-title" style="font-size:15px;margin:14px 0 8px">Standard TEE Views — Intraoperative Reference</div>
+    <table class="data-table">
+      <thead><tr><th>TEE View</th><th>Depth / Angle</th><th>Structures Visualized</th><th>Primary Clinical Use</th></tr></thead>
+      <tbody>
+        <tr><td>ME Four-Chamber</td><td>0°, ~30 cm</td><td>All 4 chambers, MV, TV, IAS</td><td>Global biventricular function; initial assessment</td></tr>
+        <tr><td>ME Long-Axis (ME LAX)</td><td>120–135°</td><td>LVOT, Aortic valve, Ascending Ao, MV anterior leaflet</td><td>AV stenosis/regurgitation; LVOT obstruction; HCM</td></tr>
+        <tr><td>ME AV Short-Axis</td><td>30–60°</td><td>Aortic valve en face (all 3 cusps), LA, RA, TV, IAS</td><td>Bicuspid AV, planimetry of AV area, TAVR surveillance</td></tr>
+        <tr><td>ME Mitral Commissural</td><td>60–70°</td><td>MV P1–P3 scallops in one plane</td><td>MR quantification, prolapse localization (P1/P2/P3)</td></tr>
+        <tr><td>TG Mid Short-Axis</td><td>0°, ~40 cm</td><td>LV at papillary muscle level — all 16 segments</td><td>Wall motion abnormalities — real-time ischemia detection</td></tr>
+        <tr><td>Deep TG LAX</td><td>0–20°, ~45 cm</td><td>LVOT, Aortic valve, MV subvalvular apparatus</td><td>Doppler-based gradients across AV and MV; LVOT VTI for CO</td></tr>
+        <tr><td>ME Bicaval</td><td>80–100°</td><td>SVC, IVC, RA, IAS, right pulmonary veins</td><td>PA catheter tip position, ASD, IVC cannula placement</td></tr>
+        <tr><td>Descending Aorta Short/LAX</td><td>0° / 90°, ~35 cm</td><td>Descending thoracic aorta</td><td>Aortic atheroma, aortic dissection surveillance</td></tr>
+      </tbody>
+    </table>
+
+    <div class="pearl">
+      <div class="pearl-title">🔷 TEE Probe Anatomy — Why LA Is Always Best</div>
+      <div class="pearl-body">The esophagus runs directly posterior to the LA, making the LA the nearest cardiac structure to the TEE transducer. This explains excellent views of: LAA (thrombus), mitral valve (en face from LA), all 4 pulmonary veins, posterior structures. The aortic root sits anterior — viewed "through" the LA in mid-esophageal windows. The TG position sees the LV from below via the stomach through the diaphragm.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 5: CARDIAC VALVES                  -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-valves" class="content">
+    <div class="section-title">Cardiac Valve Anatomy</div>
+    <div class="section-sub">Select a valve to review leaflet anatomy, subvalvular structures, and anesthesia-specific clinical pearls.</div>
+
+    <div class="valve-selector">
+      <div class="valve-btn active" onclick="showValve('av', this)"><div class="vb-name">Aortic</div><div class="vb-loc">Right 2nd ICS</div></div>
+      <div class="valve-btn" onclick="showValve('mv', this)"><div class="vb-name">Mitral</div><div class="vb-loc">Apex / 5th ICS</div></div>
+      <div class="valve-btn" onclick="showValve('tv', this)"><div class="vb-name">Tricuspid</div><div class="vb-loc">Lower LSB</div></div>
+      <div class="valve-btn" onclick="showValve('pv', this)"><div class="vb-name">Pulmonic</div><div class="vb-loc">Left 2nd ICS</div></div>
+    </div>
+
+    <div id="v-av" class="valve-detail active">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">Aortic Valve — Anatomy</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Leaflets:</strong> Left coronary (LCC), Right coronary (RCC), Non-coronary (NCC)</li>
+              <li><strong>Sinuses of Valsalva:</strong> Aortic root bulges behind each leaflet; LCA ostium from LCC sinus; RCA ostium from RCC sinus</li>
+              <li><strong>Aortic annulus:</strong> Fibrous ring; surgical and TAVR implantation target</li>
+              <li><strong>Bicuspid AV:</strong> 1–2% prevalence; LCC + RCC fusion most common; associated ascending aortopathy</li>
+              <li><strong>TAVR sizing:</strong> CT-measured annular diameter; undersizing → paravalvular leak; oversizing → annular rupture</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Aortic Stenosis — Anesthetic Approach</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Severe AS:</strong> AVA &lt;1.0 cm², Vmax &gt;4 m/s, mean gradient &gt;40 mmHg</li>
+              <li><strong>Avoid tachycardia:</strong> Reduces diastolic filling time; increases O₂ demand in hypertrophied LV</li>
+              <li><strong>Avoid sudden vasodilation:</strong> Critical afterload dependence; BP crash with spinal/epidural</li>
+              <li><strong>Maintain SR:</strong> LV depends heavily on atrial kick (25–40% of filling in stiff LV)</li>
+              <li><strong>TAVR:</strong> 15–30% new LBBB; 5–15% need permanent pacemaker (His bundle proximity)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="v-mv" class="valve-detail">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">Mitral Valve — Complex Anatomy</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Anterior leaflet (A1–A3):</strong> "Aortic leaflet" — fibrous continuity with AV; larger but less annular attachment</li>
+              <li><strong>Posterior leaflet (P1–P2–P3):</strong> Three scallops; P2 is most common site of MVP</li>
+              <li><strong>Annulus:</strong> Saddle-shaped, non-planar — critical for accurate regurgitation grading by TEE</li>
+              <li><strong>Anterolateral PM:</strong> Dual supply (LAD + LCx) — less ischemia susceptibility</li>
+              <li><strong>Posteromedial PM:</strong> Single supply (RCA or LCx) — most prone to ischemic rupture</li>
+              <li><strong>Chordae tendineae:</strong> Prevent leaflet prolapse into LA during systole; primary/secondary/tertiary</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">MR Jet Direction (TEE Diagnosis)</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Posterior leaflet pathology (P2/P3 prolapse):</strong> Eccentric jet toward <em>anterior wall / roof of LA</em></li>
+              <li><strong>Anterior leaflet pathology (A1/A2 prolapse):</strong> Eccentric jet toward <em>posterior wall of LA</em></li>
+              <li><strong>Central jet:</strong> Functional MR, dilated cardiomyopathy, annular dilation</li>
+              <li><strong>Flail leaflet:</strong> Loss of coaptation; leaflet tip visible in LA; severe MR</li>
+              <li><strong>Acute MR (PM rupture):</strong> Hyperdynamic LV, small hyperdynamic LA, pulmonary edema pattern</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="warn">
+        <div class="warn-title">⚠ Posteromedial Papillary Muscle Rupture — Surgical Emergency</div>
+        <div class="warn-body">Single-vessel blood supply → inferior MI (RCA territory) can cause acute posteromedial PM rupture → severe acute MR → cardiogenic shock. TEE: flail P3/A3 segment, severe eccentric MR jet toward the roof of the LA. This is a <strong>surgical emergency</strong>. Do NOT delay for medical optimization — proceed to emergent surgical repair or replacement.</div>
+      </div>
+    </div>
+
+    <div id="v-tv" class="valve-detail">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">Tricuspid Valve — Anatomy</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Leaflets:</strong> Anterior (largest), Septal, Inferior (posterior)</li>
+              <li><strong>Annulus:</strong> Borders the His bundle — surgical ring annuloplasty carries risk of <em>complete heart block</em></li>
+              <li><strong>Eustachian valve:</strong> Remnant fetal IVC valve in RA; may complicate TV procedures</li>
+              <li><strong>Functional TR (most common):</strong> Not primary leaflet pathology — secondary to RV dilation → annular dilatation → leaflet tethering</li>
+              <li><strong>Causes of TR:</strong> Pulmonary HTN, RV failure, IVDA endocarditis (veggie on TV), carcinoid, rheumatic</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Managing TR in Anesthesia</div>
+          <div class="card-body">
+            <ul>
+              <li>Avoid increases in PVR: hypoxia, hypercarbia, acidosis, nitrous oxide</li>
+              <li>Maintain lower heart rates — TR worsens with tachycardia</li>
+              <li><strong>Inhaled NO, prostaglandin E1, sildenafil:</strong> Reduce PVR in pulmonary HTN</li>
+              <li><strong>Milrinone:</strong> Inodilator — increases RV inotropy + decreases PVR simultaneously</li>
+              <li><strong>Vasopressin</strong> preferred over NE in combined pulmonary HTN + systemic hypotension (less PVR increase)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="v-pv" class="valve-detail">
+      <div class="grid2">
+        <div class="card">
+          <div class="card-title">Pulmonic Valve — Anatomy</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Leaflets:</strong> Anterior, Left, Right semilunar — three cusps</li>
+              <li><strong>No subvalvular apparatus</strong> — purely pressure-driven open/close mechanism</li>
+              <li><strong>Pulmonary HTN:</strong> PA dilation → pulmonic insufficiency → RV volume overload → RV dilation → functional TR cascade</li>
+              <li><strong>Pulmonic stenosis:</strong> Congenital; systolic ejection murmur at left 2nd ICS; best viewed on TEE ME RV inflow-outflow view</li>
+              <li>Difficult to visualize on TEE — most anterior structure; highest failure rate for complete imaging</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">PVR — What Moves It</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>↑ PVR (bad for RV):</strong> Hypoxia, hypercarbia, acidosis, N₂O, hypothermia, pain/light anesthesia, lung overdistension</li>
+              <li><strong>↓ PVR (helpful in PHT):</strong> Supplemental O₂, normocarbia, mild alkalosis, inhaled NO, prostaglandin E1 (PGE1), sildenafil (PDE5 inhibitor), milrinone</li>
+              <li><strong>Optimize RV preload:</strong> Moderate volume loading; avoid both hypovolemia and overdistension (causes RV failure)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 6: CORONARY ARTERIES               -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-coronary" class="content">
+    <div class="section-title">Coronary Artery Anatomy &amp; Ischemia Territories</div>
+    <div class="section-sub">Click a territory card to expand ECG leads, TEE segments, and clinical management guidance.</div>
+
+    <div class="coronary-legend">
+      <div class="cleg"><div class="cleg-dot" style="background:#E74C3C"></div><span>LAD territory</span></div>
+      <div class="cleg"><div class="cleg-dot" style="background:#3498DB"></div><span>LCx territory</span></div>
+      <div class="cleg"><div class="cleg-dot" style="background:#27AE60"></div><span>RCA territory</span></div>
+    </div>
+
+    <div class="grid3" id="coronary-cards"></div>
+
+    <div class="pearl">
+      <div class="pearl-title">🔷 Intraoperative Ischemia — Triangulation Protocol</div>
+      <div class="pearl-body">
+        Correlate three data streams simultaneously:<br>
+        <strong>ECG</strong> (lead configuration II/III/aVF vs. V4-V6 vs. anterior leads) + <strong>TEE</strong> (TG mid short-axis wall motion) + <strong>Hemodynamics</strong> (sudden BP drop, new dysrhythmia).<br><br>
+        Example: New ST elevation II/III/aVF + new inferior hypokinesis on TG short-axis = <strong>RCA territory</strong>. This guides emergent hemodynamic management, vasopressor choice, and the decision for emergent CABG vs. continued surgery.
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:15px;margin:14px 0 8px">Coronary Dominance</div>
+    <table class="data-table">
+      <thead><tr><th>Type</th><th>Prevalence</th><th>PDA Origin</th><th>AV Node Supply</th><th>Clinical Impact</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Right-dominant</strong></td><td>~70%</td><td>RCA</td><td>RCA (~90%)</td><td>Inferior MI → bradyarrhythmias, AV block (AV nodal ischemia)</td></tr>
+        <tr><td><strong>Left-dominant</strong></td><td>~10%</td><td>LCx</td><td>LCx</td><td>LCx occlusion causes inferior MI + potential AV nodal dysfunction</td></tr>
+        <tr><td><strong>Co-dominant</strong></td><td>~20%</td><td>Both RCA + LCx</td><td>Both</td><td>Variable presentations; complete angiographic assessment always required</td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-title" style="font-size:15px;margin:14px 0 8px">Coronary Angiography Standard Views</div>
+    <table class="data-table">
+      <thead><tr><th>View</th><th>Projection</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td>"Spider view"</td><td>RAO 40° / Caudal 30°</td><td>Left main, proximal LAD, proximal LCx — most clinically important single view</td></tr>
+        <tr><td>RAO Cranial</td><td>RAO 30° / Cranial 20°</td><td>Mid and distal LAD, diagonal branches</td></tr>
+        <tr><td>"Ski slope"</td><td>LAO 45° / Cranial 25°</td><td>Proximal LAD, septal perforators</td></tr>
+        <tr><td>LAO Caudal</td><td>LAO 30° / Caudal 20°</td><td>LCx, obtuse marginal branches</td></tr>
+        <tr><td>RCA RAO</td><td>RAO 30°</td><td>RCA, PDA, posterior LV branches</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 7: CONDUCTION SYSTEM               -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-conduction" class="content">
+    <div class="section-title">Cardiac Conduction System</div>
+    <div class="section-sub">SA node to Purkinje fibers — anatomy, blood supply, innate rates, and perioperative anesthesia risks.</div>
+
+    <table class="data-table">
+      <thead><tr><th>Structure</th><th>Location</th><th>Innate Rate</th><th>Blood Supply</th><th>Perioperative Anesthesia Risk</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SA Node</strong></td><td>Sulcus terminalis — SVC/RA junction, lateral RA</td><td>60–100 bpm</td><td>SA nodal a.: RCA (~60%), LCx (~40%)</td><td>Inferior MI → sinus arrest; sick sinus syndrome</td></tr>
+        <tr><td><strong>AV Node</strong></td><td>Koch's triangle, interatrial septum (RA side)</td><td>40–60 bpm</td><td>AV nodal a.: RCA (~90%), LCx (~10%)</td><td>Inferior MI → 1°, 2°, 3° AV block; sinus bradycardia</td></tr>
+        <tr><td><strong>Bundle of His</strong></td><td>Membranous interventricular septum</td><td>40–60 bpm</td><td>Perforating septal branches (LAD + RCA)</td><td>VSD repair, TAVR, tricuspid annuloplasty → His bundle injury</td></tr>
+        <tr><td><strong>Right Bundle Branch</strong></td><td>Moderator band (septomarginal trabecula) → RV apex</td><td>20–40 bpm</td><td>Septal perforators (LAD)</td><td>PA catheter → mechanical RBBB; FATAL if pre-existing LBBB</td></tr>
+        <tr><td><strong>Left Bundle Branch</strong></td><td>Broad fan on left IVS → anterior + posterior fascicles</td><td>20–40 bpm</td><td>Septal perforators (LAD) + posterior from LCx</td><td>LBBB obscures ST changes; V-paced morphology; TAVR risk</td></tr>
+        <tr><td><strong>Purkinje Fibers</strong></td><td>Subendocardial — both ventricles</td><td>20–40 bpm</td><td>Subendocardial perfusion (most vulnerable to ischemia)</td><td>Ischemia → early afterdepolarizations → triggered VT/VF</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn">
+      <div class="warn-title">⚠ PA Catheter + Pre-existing LBBB = Complete Heart Block Risk</div>
+      <div class="warn-body">PA catheter passage through the RV can mechanically compress the <strong>right bundle branch</strong> causing transient RBBB. In patients with pre-existing <strong>LBBB</strong>, this creates iatrogenic <strong>complete heart block</strong> — potentially fatal. <br><br><strong>Always:</strong> Have transcutaneous pacing pads applied and active before PA catheter insertion in LBBB patients. Consider placing a <strong>prophylactic transvenous pacing wire</strong> first in elective high-risk cases (severe LBBB + need for PA catheter).</div>
+    </div>
+
+    <div class="grid2">
+      <div class="pearl">
+        <div class="pearl-title">🔷 TAVR Conduction Disturbances</div>
+        <div class="pearl-body">TAVR carries a <strong>15–30% risk of new LBBB</strong> and <strong>5–15% permanent pacemaker</strong> requirement. The His bundle runs immediately adjacent to the aortic annulus at the NCC–RCC junction. External pacing must be immediately available throughout the procedure. Anticipate sudden complete heart block at balloon inflation or valve deployment — have a pacing-capable wire in the RV at all times during TAVR.</div>
+      </div>
+      <div class="pearl">
+        <div class="pearl-title">🔷 Moderator Band (Septomarginal Trabecula)</div>
+        <div class="pearl-body">Carries the <strong>right bundle branch</strong> across the RV from the interventricular septum to the base of the anterior papillary muscle. This is why RBB injury from PA catheters occurs — the band lies directly in the path of the catheter traversing the RV. Visible on TEE in the RV: confirms correct orientation. Injury during right ventriculotomy or endomyocardial biopsy → RBBB.</div>
+      </div>
+    </div>
+
+    <div class="key-point"><strong>High-Yield:</strong> SA node innate rate 60–100 → AV node 40–60 → His bundle/bundle branches 20–40 → Purkinje 20–40 bpm. Each successive pacemaker is progressively more escape and less reliable. Pacemaker hierarchy is the basis for understanding escape rhythms after cardiac arrest.</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 8: AUTONOMIC                        -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-autonomic" class="content">
+    <div class="section-title">Cardiac Autonomic Innervation</div>
+    <div class="section-sub">Sympathetic and parasympathetic pathways — the pharmacologic foundation of perioperative cardiovascular management.</div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Sympathetic Innervation (T1–T4)</div>
+        <div class="card-body">
+          <ul>
+            <li>Preganglionic: T1–T4 spinal levels → sympathetic chain ganglia</li>
+            <li>Postganglionic fibers to: SA node, AV node, atria, ventricles, coronary arteries</li>
+            <li>SA node: ↑ HR (positive chronotropy)</li>
+            <li>AV node: ↑ conduction velocity (positive dromotropy)</li>
+            <li>Ventricles: ↑ contractility (positive inotropy)</li>
+            <li>Vessels: vasoconstriction (alpha-1 receptors)</li>
+            <li><strong>Cervicothoracic (stellate) ganglion:</strong> Primary cardiac sympathetic hub; target for SGB in VT storm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Parasympathetic Innervation (Vagus CN X)</div>
+        <div class="card-body">
+          <ul>
+            <li>Preganglionic: Dorsal motor nucleus of vagus (medulla oblongata)</li>
+            <li>Cardiac branches: Superior + inferior cervical cardiac branches, thoracic cardiac branches</li>
+            <li>SA node: ↓ HR (negative chronotropy)</li>
+            <li>AV node: ↓ conduction velocity → AV block (negative dromotropy)</li>
+            <li>Ventricles: minimal direct inotropic effect</li>
+            <li>Neurotransmitter: Acetylcholine → M2 muscarinic receptor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn">
+      <div class="warn-title">⚠ High Neuraxial Block — Cardiac Sympathectomy</div>
+      <div class="warn-body">T1–T4 neuraxial block (high spinal or epidural) blocks the <strong>cardiac accelerator fibers</strong> → bradycardia + hypotension. Unmasks vagal tone → parasympathetic-dominant state. The higher the block, the more profound the chronotropic and inotropic depression. <strong>Asystole is possible.</strong><br><br>Treatment: <strong>Epinephrine</strong> (not just atropine) for hemodynamic collapse. Atropine alone may be insufficient if sympathetic block is complete. Have vasopressors drawn up before induction of any neuraxial anesthetic.</div>
+    </div>
+
+    <div class="pearl">
+      <div class="pearl-title">🔷 Stellate Ganglion Block — Rescue Therapy for VT Storm</div>
+      <div class="pearl-body">The cervicothoracic (stellate) ganglion block (SGB) has emerged as rescue therapy for refractory ventricular arrhythmia storm. By blocking left-sided cardiac sympathetic input, SGB reduces the triggered arrhythmia substrate.<br><br>
+      <strong>Right SGB:</strong> Primarily affects SA node rate (reduces tachycardia)<br>
+      <strong>Left SGB:</strong> Primarily affects ventricular arrhythmia threshold (reduces VT/VF burden)<br><br>
+      Technique: Ultrasound-guided LA injection anterior to longus colli muscle at C6 (Chassaignac's tubercle). 10–20 mL local anesthetic. Confirm Horner's syndrome (ptosis, miosis, anhidrosis) = successful block.</div>
+    </div>
+
+    <div style="margin-top:14px">
+      <div class="section-title" style="font-size:15px;margin-bottom:10px">Perioperative Cardiovascular Drugs — Autonomic Map</div>
+      <div id="drug-list"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 9: FETAL CIRCULATION               -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-fetal" class="content">
+    <div class="section-title">Fetal &amp; Neonatal Circulation</div>
+    <div class="section-sub">Three critical fetal shunts, the transition at birth, and their direct implications for neonatal and pediatric anesthesia.</div>
+
+    <div class="grid3">
+      <div class="fetal-card">
+        <div class="fetal-title">Ductus Venosus</div>
+        <div class="fetal-label">Path</div>
+        <div class="fetal-val">Umbilical vein → bypasses liver → IVC → RA</div>
+        <div class="fetal-label">Function</div>
+        <div class="fetal-val">Delivers oxygenated umbilical blood directly to right heart, bypassing hepatic circulation</div>
+        <div class="fetal-label">Closes</div>
+        <div class="fetal-val">Hours after birth (functional); days–weeks (anatomical)</div>
+        <div class="fetal-label">Postnatal Remnant</div>
+        <div class="fetal-val">Ligamentum venosum</div>
+      </div>
+      <div class="fetal-card">
+        <div class="fetal-title">Foramen Ovale</div>
+        <div class="fetal-label">Path</div>
+        <div class="fetal-val">RA → LA (right-to-left shunt, bypasses lungs)</div>
+        <div class="fetal-label">Function</div>
+        <div class="fetal-val">Delivers best-oxygenated blood to brain and coronary arteries via systemic circulation</div>
+        <div class="fetal-label">Closes</div>
+        <div class="fetal-val">When LA pressure exceeds RA pressure at birth</div>
+        <div class="fetal-label">Postnatal Remnant</div>
+        <div class="fetal-val">Fossa ovalis; PFO persists in ~25% of adults</div>
+      </div>
+      <div class="fetal-card">
+        <div class="fetal-title">Ductus Arteriosus</div>
+        <div class="fetal-label">Path</div>
+        <div class="fetal-val">Pulmonary trunk → descending aorta (right-to-left)</div>
+        <div class="fetal-label">Function</div>
+        <div class="fetal-val">Diverts RV output away from non-functional fetal lungs to systemic circulation</div>
+        <div class="fetal-label">Closes</div>
+        <div class="fetal-val">Hours to days (prostaglandins maintain patency); term neonates faster</div>
+        <div class="fetal-label">Postnatal Remnant</div>
+        <div class="fetal-val">Ligamentum arteriosum</div>
+      </div>
+    </div>
+
+    <div class="warn" style="margin-top:14px">
+      <div class="warn-title">⚠ Ductal-Dependent Congenital Heart Lesions</div>
+      <div class="warn-body">Hypoplastic left heart syndrome, critical aortic stenosis, interrupted aortic arch, pulmonary atresia — all require a <strong>patent ductus arteriosus</strong> for systemic or pulmonary blood flow to survive until surgical palliation.<br><br>
+      <strong>Prostaglandin E1 (PGE1) infusion</strong> maintains ductal patency as a bridge. Critical side effect: <strong>APNEA</strong> (most dangerous — intubation equipment must be immediately available at all times). Also: fever, hypotension, flushing, seizures, cortical hyperostosis with long-term use.</div>
+    </div>
+
+    <div class="grid2" style="margin-top:14px">
+      <div class="pearl">
+        <div class="pearl-title">🔷 PFO in Adult Anesthesia — Paradoxical Embolism</div>
+        <div class="pearl-body">~25% of adults have a PFO that never anatomically sealed. Conditions that elevate RA pressure (high PEEP, PE, RV failure, Valsalva, prone positioning) can cause <strong>right-to-left shunting</strong> through the PFO → paradoxical embolism, refractory hypoxemia.<br><br>
+        Beach-chair position with known PFO: risk of paradoxical <strong>air embolism</strong> (venous air → crosses PFO → systemic arterial circulation → stroke). Use precordial Doppler for VAE monitoring.</div>
+      </div>
+      <div class="pearl">
+        <div class="pearl-title">🔷 PDA Management in Premature Neonates</div>
+        <div class="pearl-body">In premature neonates, the ductus arteriosus may fail to close → <strong>left-to-right shunt</strong> (systemic → pulmonary) → pulmonary overcirculation → congestive heart failure.<br><br>
+        <strong>Medical:</strong> Indomethacin or ibuprofen (COX inhibitors → ↓ prostaglandins → DA constriction).<br>
+        <strong>Surgical:</strong> PDA ligation if medical therapy fails — one of the highest-risk neonatal procedures. Anticipate: hemodynamic instability, temperature lability, metabolic acidosis, need for vasopressor support.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TAB 10: HEAD & NECK                    -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="tab-neck" class="content">
+    <div class="section-title">Head, Neck &amp; Cerebral Vasculature</div>
+    <div class="section-sub">Carotid anatomy, Circle of Willis, jugular veins, and their relevance in neuroanesthesia, CEA, and regional techniques.</div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">Common Carotid Bifurcation</div>
+        <div class="card-body">
+          <ul>
+            <li>Bifurcates at the upper border of the thyroid cartilage (C3–C4)</li>
+            <li><strong>Carotid sinus:</strong> Dilation at bifurcation; baroreceptors (CN IX / Hering's nerve) → reflex bradycardia + hypotension when compressed or stimulated during CEA</li>
+            <li><strong>Carotid body:</strong> Chemoreceptor adjacent to bifurcation → responds to hypoxia, hypercapnia, acidosis → ↑ respiratory drive</li>
+            <li>CEA: Surgeons inject the carotid sinus with local anesthetic to prevent hemodynamic reflexes during dissection and cross-clamp</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Circle of Willis — Cerebral Collateral Anatomy</div>
+        <div class="card-body">
+          <ul>
+            <li>Complete circle in only <strong>20–25% of patients</strong> — partial variants are common</li>
+            <li>Components: Bilateral A1 (ACA), Anterior communicating a., Bilateral posterior communicating a., Bilateral P1 (PCA), Basilar a. apex</li>
+            <li>Carotid cross-clamping at CEA → contralateral carotid supplies via <em>anterior communicating artery</em></li>
+            <li>Posterior circulation contributes via <em>posterior communicating arteries</em></li>
+            <li>Shunt need at CEA depends on Circle of Willis completeness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pearl">
+      <div class="pearl-title">🔷 Carotid Endarterectomy (CEA) — Anesthesia Framework</div>
+      <div class="pearl-body">
+        <strong>Regional (cervical plexus block):</strong> Gold standard for neuromonitoring — real-time awake neurological assessment during test occlusion. Patient reports symptoms (weakness, speech change, confusion) within seconds of ischemia. Avoids GA-associated hemodynamic instability.<br><br>
+        <strong>General anesthesia:</strong> NIRS (cerebral oximetry) or EEG for neuromonitoring. Maintain MAP <strong>20% above baseline</strong> during cross-clamping to ensure collateral perfusion. Shunt if NIRS drops &gt;20% or EEG shows ischemic changes. Use esmolol to control intraoperative hypertension.
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-title">External Carotid Branches — Mnemonic</div>
+        <div class="card-body">
+          <div class="key-point" style="margin-bottom:8px"><strong>"Some Angry Ladies Fight Over PMS"</strong></div>
+          <ul>
+            <li><strong>S</strong>uperior thyroid artery</li>
+            <li><strong>A</strong>scending pharyngeal artery</li>
+            <li><strong>L</strong>ingual artery</li>
+            <li><strong>F</strong>acial artery</li>
+            <li><strong>O</strong>ccipital artery</li>
+            <li><strong>P</strong>osterior auricular artery</li>
+            <li><strong>M</strong>axillary artery (terminal branch)</li>
+            <li><strong>S</strong>uperficial temporal artery (terminal branch)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Internal Jugular — Key Anatomical Points</div>
+        <div class="card-body">
+          <ul>
+            <li>Within carotid sheath: IJV + CCA + Vagus (CN X)</li>
+            <li>At cricoid (C4): IJV <strong>anterolateral</strong> to CCA</li>
+            <li>At clavicle: IJV may be directly anterior to CCA — highest carotid puncture risk zone</li>
+            <li>Vagus nerve runs <em>between</em> CCA and IJV — phrenic or laryngeal stimulation possible during access</li>
+            <li><strong>Left IJV:</strong> Thoracic duct at left jugulovenous angle → injury = chylothorax</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-point">
+      <strong>Cerebral Perfusion Pressure:</strong> CPP = MAP − ICP (or MAP − CVP if CVP &gt; ICP).<br>
+      During DHCA for aortic arch surgery: <strong>Antegrade cerebral perfusion (ACP)</strong> via innominate/carotid cannulation is preferred over <strong>retrograde cerebral perfusion (RCP)</strong> via SVC — better distribution, less neurologic injury. Both used at 18–20°C. Circle of Willis variants determine collateral adequacy during ACP.
+    </div>
+
+    <table class="data-table" style="margin-top:14px">
+      <thead><tr><th>Vessel</th><th>Anatomical Course</th><th>Anesthesia Relevance</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Vertebral a.</strong></td><td>Arises from subclavian; ascends through C6–C1 foramina transversaria; enters skull via foramen magnum</td><td>Subclavian steal syndrome; vertebral artery injury during cervical spine surgery or posterior cervical approaches</td></tr>
+        <tr><td><strong>Basilar a.</strong></td><td>Formed by bilateral vertebrals at ponto-medullary junction; terminates at Circle of Willis as bilateral PCAs</td><td>Posterior circulation strokes; brainstem ischemia during hypotension in patients with posterior circulation insufficiency</td></tr>
+        <tr><td><strong>Middle cerebral a.</strong></td><td>Lateral Sylvian fissure; largest branch of ICA; supplies majority of lateral cerebral cortex</td><td>Most common site of embolic stroke; monitored by TCD in CEA and cardiac surgery</td></tr>
+        <tr><td><strong>Ophthalmic a.</strong></td><td>First branch of ICA intracranially; enters orbit via optic canal</td><td>Arterial emboli to ophthalmic a. → transient monocular blindness (amaurosis fugax) = TIA warning sign before CEA</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="app-footer">
+    Cardiovascular Anatomy — Advanced Anesthesia Study Guide &nbsp;|&nbsp; Med Center Health / Total Anesthesia Solutions &nbsp;|&nbsp; Bowling Green, KY &nbsp;|&nbsp; Based on: Dr. Heck Cardiovascular System Lecture Series
+  </div>
+
+</div><!-- /#app -->
+
+<script>
+  /* ── NAVIGATION ── */
+  function showTab(id, el) {
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    if(el) el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showValve(id, el) {
+    document.querySelectorAll('[id^="v-"]').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.valve-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('v-' + id).classList.add('active');
+    if(el) el.classList.add('active');
+  }
+
+  function showAccessTab(id, el) {
+    document.querySelectorAll('[id^="acc-"]').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.access-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('acc-' + id).classList.add('active');
+    if(el) el.classList.add('active');
+  }
+
+  /* ── VOLUME / RESISTANCE BARS ── */
+  function renderBars(targetId, data) {
+    document.getElementById(targetId).innerHTML = data.map(([label, pct, color]) =>
+      `<div style="margin-bottom:10px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text2);margin-bottom:3px">
+          <span>${label}</span>
+          <span style="font-weight:600;color:${color}">${pct}%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width:${pct}%;background:${color}"></div>
+        </div>
+      </div>`
+    ).join('');
+  }
+
+  renderBars('vol-bars', [
+    ['Systemic veins', 64, '#2E86C1'],
+    ['Lungs', 9, '#1ABC9C'],
+    ['Heart in diastole', 7, '#9B59B6'],
+    ['Large arteries', 7, '#E67E22'],
+    ['Small aa./arterioles', 8, '#E74C3C'],
+    ['Capillaries', 5, '#27AE60']
+  ]);
+
+  renderBars('res-bars', [
+    ['Small arteries/arterioles', 47, '#E74C3C'],
+    ['Capillaries', 27, '#3498DB'],
+    ['Large arteries', 19, '#E67E22'],
+    ['Veins', 7, '#27AE60']
+  ]);
+
+  /* ── CORONARY TERRITORY CARDS ── */
+  const coronaryData = [
+    {
+      id: 'lad', name: 'LAD', full: 'Left Anterior Descending', color: '#E74C3C',
+      ecg: 'V1–V6, I, aVL',
+      wall: 'Anterior, anteroseptal, anterolateral, apex',
+      segments: 'Anterior / AnteroSeptal / AnteroLateral (basal, mid, apical)',
+      details: 'Runs in anterior interventricular sulcus toward the apex. Gives off <strong>diagonal branches</strong> (D1, D2) supplying the anterolateral wall, and <strong>septal perforators</strong> supplying the anterior 2/3 of the interventricular septum. Proximal LAD occlusion is the "widow maker" — anterior MI with potential hemodynamic collapse, severe LV dysfunction, and risk of complete heart block if proximal enough to involve the right bundle branch.'
+    },
+    {
+      id: 'lcx', name: 'LCx', full: 'Left Circumflex', color: '#3498DB',
+      ecg: 'I, aVL, V5–V6',
+      wall: 'Lateral, posterolateral',
+      segments: 'Lateral / InferoLateral (basal, mid)',
+      details: 'Runs in the left atrioventricular groove posteriorly. Gives off <strong>obtuse marginal branches</strong> (OM1, OM2) supplying the lateral LV wall. In left-dominant patients (~10%), LCx gives rise to the PDA and AV nodal artery. LCx territory ischemia can be "electrically silent" — always correlate ECG with TEE wall motion (lateral segments) when unexplained hemodynamic instability occurs.'
+    },
+    {
+      id: 'rca', name: 'RCA', full: 'Right Coronary Artery', color: '#27AE60',
+      ecg: 'II, III, aVF (+ V4R in proximal RCA)',
+      wall: 'Inferior, RV free wall, posterior septum',
+      segments: 'Inferior / InferoSeptal (basal, mid) + RV',
+      details: 'Runs in the right AV groove. Gives off the <strong>SA nodal artery</strong> (~60% of the time), <strong>acute marginal branches</strong> supplying the RV free wall, and in right-dominant systems (70%): the <strong>PDA</strong> and <strong>AV nodal artery</strong>. Proximal RCA occlusion → inferior MI + RV infarction (ST elevation V4R). AV block is common due to AV nodal ischemia. Treat with fluids (maintain RV preload), vasopressors, and pacing if needed — avoid nitrates (preload-dependent RV).'
+    }
+  ];
+
+  function renderCoronaryCards() {
+    document.getElementById('coronary-cards').innerHTML = coronaryData.map(d =>
+      `<div class="territory-card" id="tc-${d.id}" onclick="toggleCoronary('${d.id}')">
+        <div class="territory-artery" style="color:${d.color}">${d.name}</div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px">${d.full}</div>
+        <div class="territory-ecg">ECG: ${d.ecg}</div>
+        <div class="territory-detail">
+          <div style="margin-bottom:4px"><strong style="color:var(--text)">LV Wall:</strong> ${d.wall}</div>
+          <div style="margin-bottom:6px"><strong style="color:var(--text)">TEE Segments:</strong> ${d.segments}</div>
+          <div>${d.details}</div>
+        </div>
+      </div>`
+    ).join('');
+  }
+
+  function toggleCoronary(id) {
+    const el = document.getElementById('tc-' + id);
+    const wasSelected = el.classList.contains('selected');
+    document.querySelectorAll('.territory-card').forEach(c => c.classList.remove('selected'));
+    if (!wasSelected) el.classList.add('selected');
+  }
+
+  renderCoronaryCards();
+
+  /* ── DRUG TABLE ── */
+  const drugs = [
+    { name: 'Atropine', mech: 'M2 muscarinic antagonist', hr: '↑↑', hrColor: '#16A085', note: 'Sinus bradycardia, antisialagogue, reversal co-drug (with neostigmine)' },
+    { name: 'Glycopyrrolate', mech: 'M2 antagonist — no CNS penetration', hr: '↑', hrColor: '#16A085', note: 'Antisialagogue; preferred with neostigmine (less dysrhythmia)' },
+    { name: 'Epinephrine', mech: 'Alpha + Beta-1 + Beta-2 agonist', hr: '↑↑', hrColor: '#16A085', note: 'Anaphylaxis, cardiac arrest, vasoplegic shock, bronchospasm' },
+    { name: 'Norepinephrine', mech: 'Alpha-1 dominant + mild Beta-1', hr: '↔ (reflex ↓)', hrColor: '#7F8C8D', note: 'Vasoplegic/septic shock; preserves coronary and renal perfusion' },
+    { name: 'Phenylephrine', mech: 'Pure alpha-1 agonist (no Beta)', hr: '↓ (reflex)', hrColor: '#C0392B', note: 'Spinal hypotension; caution when CO is compromised (increases afterload)' },
+    { name: 'Vasopressin', mech: 'V1 receptor vasoconstriction (non-adrenergic)', hr: '↓ (reflex)', hrColor: '#C0392B', note: 'Vasodilatory shock; preferred in pulmonary HTN (minimal PVR increase)' },
+    { name: 'Dopamine', mech: 'Dose-dependent DA/Beta-1/Alpha-1 agonist', hr: '↑', hrColor: '#16A085', note: 'Low: renal perfusion (controversial); Medium: inotropy; High: vasopressor' },
+    { name: 'Dobutamine', mech: 'Beta-1 &gt; Beta-2 agonist, mild Alpha-1', hr: '↑', hrColor: '#16A085', note: 'LV/RV failure; cardiogenic shock; stress echocardiography' },
+    { name: 'Milrinone', mech: 'PDE-3 inhibitor → ↑ cAMP → inodilator', hr: '↑', hrColor: '#16A085', note: 'RV/LV failure; decreases both PVR + SVR simultaneously; post-cardiac surgery' },
+    { name: 'Esmolol', mech: 'Beta-1 selective antagonist (t½ = 9 min)', hr: '↓↓', hrColor: '#C0392B', note: 'Perioperative HTN/tachycardia; CEA, aortic dissection, thyroid storm' },
+    { name: 'Metoprolol', mech: 'Beta-1 selective antagonist (oral/IV)', hr: '↓', hrColor: '#C0392B', note: 'AFib rate control; perioperative beta-blockade' },
+    { name: 'Labetalol', mech: 'Alpha-1 + Beta (1:7 IV, 1:3 PO)', hr: '↓', hrColor: '#C0392B', note: 'Hypertensive emergencies; does not increase fetal HR; obstetric HTN' },
+    { name: 'Neostigmine', mech: 'Acetylcholinesterase inhibitor → ↑ ACh', hr: '↓↓ (vagal)', hrColor: '#C0392B', note: 'NDMR reversal — always pair with glycopyrrolate or atropine' },
+    { name: 'Sugammadex', mech: 'Cyclodextrin encapsulates rocuronium/vecuronium', hr: '↔ / mild ↓', hrColor: '#7F8C8D', note: 'NDMR reversal without cholinergic effects; no vagal stimulation' },
+  ];
+
+  function renderDrugs() {
+    document.getElementById('drug-list').innerHTML = `
+      <table class="data-table">
+        <thead><tr><th>Drug</th><th>Mechanism</th><th>HR Effect</th><th>Clinical Use</th></tr></thead>
+        <tbody>${drugs.map(d =>
+          `<tr>
+            <td><strong>${d.name}</strong></td>
+            <td style="font-size:11px">${d.mech}</td>
+            <td style="text-align:center"><span class="badge" style="background:${d.hrColor}20;color:${d.hrColor};font-size:12px">${d.hr}</span></td>
+            <td style="font-size:11px;color:var(--text2)">${d.note}</td>
+          </tr>`
+        ).join('')}</tbody>
+      </table>`;
+  }
+
+  renderDrugs();
+</script>
+</body>
+</html>
